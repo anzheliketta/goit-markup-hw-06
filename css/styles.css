@@ -31,6 +31,20 @@ ol {
   margin: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .section {
   padding: 96px 0;
   margin-left: auto;
@@ -91,21 +105,6 @@ ol {
   color: #2e2f42;
 } 
 
-.address {
-  font-style: normal;
-  margin-left: auto;
-  display: none;
-}
-
-.address-link {
-  color: #434455;
-}
-
-.adress-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
 .open-menu-btn {
   padding: 0;
@@ -113,6 +112,9 @@ ol {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.address{
+  display: none;
 }
 
 @media screen and (min-width:768px) {
@@ -149,7 +151,25 @@ ol {
   .header-nav-link:focus {
       color: #404bbf;
   }
+  
+  .address {
+    font-style: normal;
+    display: flex;
 
+  }
+
+  .address-link {
+    color: #434455;
+      font-size: 12px;
+      line-height: 1.16;
+      letter-spacing: 0.02em;
+      transition: color cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .adress-link:hover,
+  .adress-link:focus {
+      color: #404bbf;
+  }
+  
   .current {
       position: relative;
       color: #404BBF;
@@ -164,22 +184,6 @@ ol {
       height: 4px;
       background-color: #404bbf;
       border-radius: 2px;
-  }
-
-  .address {
-      display: block;
-  }
-
-  .adress-link {
-      font-size: 12px;
-      line-height: 1.16;
-      letter-spacing: 0.02em;
-      transition: color cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .adress-link:hover,
-  .adress-link:focus {
-      color: #404bbf;
   }
 }
 
@@ -198,16 +202,14 @@ ol {
       margin-right: 76px;
   }
 
-  .adress-list {
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
+  .address-list {
+    display: flex;
+    gap: 40px;
   }
-
-  .adress-link {
-      font-size: 16px;
-      line-height: 1.5;
-  }
+  .address-link {
+    font-size: 16px;
+    line-height: 1.5;
+}
 }
 
 /*hero*/
@@ -379,9 +381,6 @@ ol {
   }
 
   .features-item {
-  width: 320px;
-
-
   }
 
   .features-item-text{
@@ -630,8 +629,6 @@ ol {
   gap: 24px;
   align-items: center;
   justify-content: center;
-  padding-top: 8px;
-  padding-bottom: auto;
 }
 
 .team-contact-icon {
@@ -657,10 +654,8 @@ ol {
 
 /*portfolio*/
 .portfolio {
-  padding-left: 28px;
-  padding-right: 28px;
-/*   padding-bottom: 120px;
-  padding-top: 120px; */
+  padding-bottom: 120px;
+  padding-top: 120px; 
 }
 @media screen and (min-width: 1158px) {
   .portfolio {
@@ -687,7 +682,9 @@ ol {
   justify-content: flex-start;
   flex-direction: column;
   gap: 48px;
+  
 }
+
 
 
 @media screen and (min-width: 1158px) {
@@ -706,6 +703,8 @@ ol {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+  
+  
 }
 .portfolio-item,
 .portfolio-subtitle {
@@ -717,6 +716,8 @@ ol {
   color: #2e2f42;
   text-align: left;
   text-transform: capitalize;
+  
+  
 }
 .portfolio-subtitle {
   font-family: "Roboto", sans-serif;
@@ -727,6 +728,13 @@ ol {
   color: #2e2f42;
   margin-bottom: 8px;
 }
+
+.portfolio-item {
+  background-color: #ffffff;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+      0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+}                                
 
 .portfolio-item-text {
   font-family: "Roboto", sans-serif;
@@ -746,6 +754,7 @@ ol {
   letter-spacing: 0.02em;
   color: #434455;
   text-align: left;
+  
 }
 
 .portfolio-item:hover {
@@ -785,13 +794,7 @@ ol {
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 72px;
-  }
-.portfolio-item {
-  background-color: #ffffff;
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-      0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-  border-radius: 0px 0px 4px 4px;
-}                                      
+  }      
 .open-card {
       width: 356px;
   }
@@ -920,7 +923,6 @@ ol {
   background-color: transparent;
   padding-left: 16px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 16px;
 }
 
 
@@ -946,6 +948,7 @@ ol {
   border: none;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 16px;
 }
 
 
@@ -1285,9 +1288,7 @@ ol {
 /* backdrop */
 .backdrop {
   position: fixed;
-  z-index: 999999;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
@@ -1297,8 +1298,8 @@ ol {
 }
 
 .backdrop.is-open {
-  visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .modal {
@@ -1314,7 +1315,9 @@ ol {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 16px 24px 16px;
 }
-
+.modal-input{
+  width: 100%;
+}
 .modal-close-btn {
   display: flex;
   align-items: center;
@@ -1360,7 +1363,7 @@ ol {
 }
 
 .form {
-  max-width: 256px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 16px;
@@ -1385,7 +1388,7 @@ ol {
 }
 
 .form-input {
-  width: 100%;
+  width: auto;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   width: 256px;
@@ -1559,7 +1562,7 @@ ol {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -1609,7 +1612,6 @@ ol {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  fill: #2e2f42;
 }
 
 .mbl-nav-menu {
@@ -1622,7 +1624,6 @@ ol {
 }
 
 .container-mbl {
-  position: relative;
   height: 100%;
 }
 
@@ -1654,6 +1655,7 @@ ol {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #434455;
+  font-style: normal;
 }
 
 .contacts-mbl-active {
