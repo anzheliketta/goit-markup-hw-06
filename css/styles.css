@@ -948,6 +948,7 @@ ol {
   border: none;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 16px;
 }
 
 
@@ -1006,7 +1007,9 @@ ol {
       display: flex;
       gap: 24px;
   }
-
+  .subscribe-btn {
+    margin-top: 0px;
+  }
 
 }
 
